@@ -21,6 +21,7 @@
 // ============================================================================
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -44,6 +45,11 @@ int main() {
 
     // TODO: Write a for loop that counts from 5 down to 1
     //       Print each number followed by a space, then "Go!" on a new line.
+    for (int i = 5; i >= 1; i--){
+        cout << i << " ";
+    }
+    cout << endl;
+    cout << "Go!";
 
 
     cout << endl;
@@ -63,6 +69,11 @@ int main() {
 
     // TODO: Use a loop to calculate the sum of 1 + 2 + ... + N
     //       Store the result in a variable called 'sum' and print it.
+    int sum = 0;
+    for (int i = 1; i <= n; i++){
+        sum += i;
+    }
+    cout << "Sum: " << sum << endl;
 
 
     cout << endl;
@@ -83,11 +94,11 @@ int main() {
     //
     //  Example: Print a 3x3 grid of stars
     //
-    //    for (int row = 0; row < 3; row++) {
-    //        for (int col = 0; col < 3; col++) {
-    //            cout << "* ";
-    //        }
-    //        cout << endl;
+    // for (int row = 0; row < 3; row++) {
+    // for (int col = 0; col < 3; col++) {
+    //       cout << "* ";
+    //   }
+    //  cout << endl;
     //    }
     //
     //  Output:
@@ -109,6 +120,22 @@ int main() {
     // TODO: Create nested loops (outer: 4 iterations, inner: 5 iterations).
     //       Use a counter variable to count how many times the inner body runs.
     //       Print the total count.
+    //nested loopta iki for var ikisinde de farklı değişkenler kullan
+    cout << "Exercise 2.1" << endl;
+    int outer_loop_counter = 0;
+    int inner_loop_counter = 0;
+    int total_loop_counter = 0;
+    for (int row = 0; row <= 4; row++){
+        outer_loop_counter ++;
+        total_loop_counter ++;
+        for(int col = 0; col < 5; col++){
+            inner_loop_counter ++;
+             total_loop_counter ++;
+        }
+    }
+    cout << " outer:" << outer_loop_counter << endl;
+    cout << "inner:" <<  inner_loop_counter << endl;
+    cout << "total:" << total_loop_counter << endl;
 
 
     cout << endl;
@@ -132,10 +159,16 @@ int main() {
     //   Print it and stop searching immediately using 'break'.
     //
     //   Expected output: "First negative number: -3"
-
+cout << "Exercise 2.2" << endl;
     int data[] = {7, 12, 4, 9, -3, 8, -1, 6};
     int dataSize = 8;
-
+    
+    for ( int i = 0; i < dataSize  ; i++){
+    if (data [i] < 0 ){
+        cout << "First Negative number: " << data[i];
+        break;
+    }
+}
     // TODO: Loop through the 'data' array.
     //       When you find the first negative number, print it and break.
 
@@ -166,6 +199,11 @@ int main() {
     //       Use 'continue' to skip multiples of 3.
     //       Print the remaining numbers on one line separated by spaces.
 
+cout << "Exercise 2.3" << endl;
+for(int i = 1; i <= 20; i++){
+    if (i % 3 == 0) continue;
+    cout << i << " ";
+}
 
     cout << endl << endl;
 
@@ -196,6 +234,13 @@ int main() {
     cout << "--- Multiplication Table (1-5) ---" << endl;
 
     // TODO: Write nested loops to produce the multiplication table above.
+    for(int k = 1 ; k <= 5 ; k++){
+        for( int z = 1; z <= 5; z++){
+            cout << k * z << "\t";
+        }
+        cout << endl;
+    }
+    
 
 
     cout << endl;
@@ -216,17 +261,24 @@ int main() {
     cout << "--- Right Triangle ---" << endl;
     int height;
     cout << "Enter triangle height (1-10): ";
+    
     cin >> height;
 
     // TODO: Use nested loops to print the right triangle pattern.
     //       Outer loop: controls the row (1 to height)
     //       Inner loop: prints '*' characters for that row
-
+for (int i = 1; i <= height; i++){
+        for (int j = 1; j <= i; j++){
+        cout << "*";
+        }
+        cout << endl;
+    }
+    // bunun pyramid halini sorucak
 
     cout << endl;
 
     // -----------------------------------------------------------------------
-    // Exercise 3.3: Number Triangle with Row Sum
+    // Exercise 3.3: Number Triangle with Row Sum 
     //   Print the following pattern for N rows (ask user for N, 1-7):
     //
     //   Example for N = 5:
@@ -251,7 +303,19 @@ int main() {
     //         - Print each number
     //         - Accumulate the sum for that row
     //       After inner loop: print "-> Sum = " and the row's sum
-
+      
+ for(int i = 1; i <= rows; i++ ){
+    int sum = 0;
+    if (rows >= 8){
+        cout << "Enter number between 1-7:";
+     break;
+    }
+     for(int j = 1; j <= i; j++ ){
+         cout << j << " ";
+         sum += j;
+     }
+     cout << setw(20)<< " -> Sum = " << sum << endl;
+ }
 
     cout << endl;
 
@@ -313,7 +377,17 @@ int main() {
     //       Use 'continue' to skip any score below 50.
     //       Accumulate the sum and count of valid scores.
     //       Print the average of valid scores (use double for precision).
-
+    float avg = 0;
+    int valid_counter = 0;
+    for(int i = 0; i <= scoresSize ; i++){
+        if (scores[i] < 50 ) {
+            continue;
+        }
+        avg += scores[i];
+        valid_counter++;
+    }
+    cout << "average of valid scores:" << avg / valid_counter << endl;
+       
 
     cout << endl;
 
@@ -346,7 +420,7 @@ int main() {
     cout << endl;
 
     // ========================================================================
-    //  SECTION 4 — CHALLENGE  (10 minutes)
+    //  SECTION 4 — CHALLENGE  (10 minutes) Quizzzzzz
     //  Goal: Apply everything you've learned to harder problems.
     // ========================================================================
 
