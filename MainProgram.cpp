@@ -240,9 +240,6 @@ for(int i = 1; i <= 20; i++){
         }
         cout << endl;
     }
-    
-
-
     cout << endl;
 
     // -----------------------------------------------------------------------
@@ -454,9 +451,8 @@ for (int i = 1; i <= height; i++){
     // TODO: Print the diamond pattern.
     //       You may use two separate loop sections (upper half, lower half)
     //       or a single clever loop — your choice.
-
-
-    cout << endl;
+    // ÜST
+ 
 
     // -----------------------------------------------------------------------
     // Challenge 4.2: Password Attempt System
@@ -471,7 +467,8 @@ for (int i = 1; i <= height; i++){
     //   This exercise combines a loop with break and a counter.
     // -----------------------------------------------------------------------
 
-    cout << "--- Password System ---" << endl;
+
+cout << "--- Password System ---" << endl;
 
     int correctPassword = 1234;
 
@@ -490,4 +487,38 @@ for (int i = 1; i <= height; i++){
     // ========================================================================
 
     return 0;
+    // Piramit sorusu
+    for(int row = 0; row < 4; row++){
+        //boşluklar
+        for(int space = 0; space < n - row - 1; space++){
+            cout << " ";
+        }
+        for(int star = 0; star < 2 * row + 1; star++){
+            cout << "*";
+        }
+        cout << endl;
+    }
+       int z = 3;
+for (int row = 0; row < z; row++){
+    for(int space = 0; space < z - row - 1; space++){
+        cout << " ";
+    }
+    for(int star = 0; star < 2 * row + 1; star++){
+        cout << "*";
+    }
+    cout << endl;
 }
+// alt
+ for(int row = z-2; row >= 0; row--) {
+
+        for(int space = 0; space < z - row - 1; space++)
+            cout << " ";
+
+        for(int star = 0; star < 2*row + 1; star++)
+            cout << "*";
+
+        cout << endl;
+    }
+   
+}
+
